@@ -1,8 +1,10 @@
 import Navbar from '@/components/Navbar'
 import axios from 'axios'
+import Link from 'next/link'
 import React, { useEffect, useState } from 'react'
 import { Carousel, Table } from 'react-bootstrap'
-
+import { AiOutlinePlus } from 'react-icons/ai'
+import { BsFillTrash3Fill, BsPencilFill } from 'react-icons/bs'
 
 
 const index = () => {
@@ -13,14 +15,14 @@ const index = () => {
     }, [])
      
     function getAll(){
-        axios.get('').then(resultado => {
+        axios.get('api/home').then(resultado => {
             setHome(resultado.data)
         })
     }
 
     function excluir(id){
         if (confirm('Deseja realmente excluir o registro?')){
-        axios.delete('' + id )
+        axios.delete('api/home/' + id )
         getAll()
     }
 }
@@ -45,26 +47,41 @@ const index = () => {
 <br/>
 <br/>
 <br/>
-        <h2 className='text-danger aligh text-center'>Feedbacks</h2>
+        <h2 className='bg-danger text-light aligh text-center'>Feedbacks</h2>
         <Table striped bordered hover>
             <thead>
                 <tr>
-                    <th></th>
+                    <th>#</th>
                     <th>Nome</th>
                     <th>Nota</th>
                     <th>Avaliação</th>
+                    <th>E-mail</th>
+                    <th>Telefone</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td></td>
-                    <td></td>
-                    <td></td>
-                    <td></td>
+            {home.map((item) => (
+                        <tr key={item.id}>
+                            <td>
+                                <Link href={'/home/' + item.id}>
+                                    <BsPencilFill title="Alterar" className='text-primary' />
+                                </Link>
+                                {' '}
+                                <BsFillTrash3Fill title="Excluir" onClick={() => excluir(item.id)} className='text-danger' />
+                            </td>
+                            <td>{item.nome}</td>
+                            <td>{item.nota}</td>
+                            <td>{item.avaliacao}</td>
+                            <td>{item.email}</td>
+                            <td>{item.telefone}</td>
+                            
                 </tr>
+                ))}
             </tbody>
         </Table>
-        <p>Deixe seu feedback!</p>
+        <Link href="/home/form" className='mb-2 btn btn-dark'>
+        Deixe seu feedback!
+        </Link>
     </Navbar>
   )
 }
