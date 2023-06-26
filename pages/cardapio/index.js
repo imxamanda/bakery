@@ -3,6 +3,16 @@ import React from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import cardapioca from '../funcionarios/cardapioca/cardapioca'
 
+useEffect(() => {
+  getAll()
+}, [])
+
+function getAll() {
+  axios.get('/api/funcionários/cardapioca/cardapioca').then(resultado => {
+      setCursos(resultado.data)
+  })
+}
+
 const index = () => {
   return (
     <Navbar titulo='Cardápio'>

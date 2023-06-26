@@ -8,7 +8,6 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import axios from 'axios'
 import { mask } from 'remask'
 import Navbar from '@/components/Navbar'
-import Upload from '@/components/Upload'
 
 
 const form = () => {
@@ -47,13 +46,13 @@ const form = () => {
                 <Form.Select aria-label="Default select example">
 
                     <option>Selecione</option>
-                    <option value="1">Bebida</option>
-                    <option value="2">Panificação</option>
-                    <option value="3">Frios</option>
-                    <option value="4">Confeitaria</option>
-                    <option value="5">Sanduiche</option>
-                    <option value="6">Salgado</option>
-                    <option value="7">Doce</option>
+                    <option value="bebida">Bebida</option>
+                    <option value="panificacao">Panificação</option>
+                    <option value="frios">Frios</option>
+                    <option value="confeitaria">Confeitaria</option>
+                    <option value="sanduiche">Sanduiche</option>
+                    <option value="salgado">Salgado</option>
+                    <option value="doce">Doce</option>
 
                 </Form.Select>
                 <br />

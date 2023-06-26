@@ -40,11 +40,20 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="tipo">
                     <Form.Label>Tipo: </Form.Label>
-                    <Form.Control type="text" {...register('tipo')} />
+                    <Form.Select type="text" {...register('tipo')}>
+                    <option value="bebida">Bebida</option>
+                    <option value="panificacao">Panificação</option>
+                    <option value="frios">Frios</option>
+                    <option value="confeitaria">Confeitaria</option>
+                    <option value="sanduiche">Sanduiche</option>
+                    <option value="salgado">Salgado</option>
+                    <option value="doce">Doce</option>
+                    </Form.Select>
+
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="descricao">
-                    formaluni  <Form.Label>Descrição: </Form.Label>
+                    <Form.Label>Descrição: </Form.Label>
                     <Form.Control type="text" {...register('descricao')} />
                 </Form.Group>
 
@@ -64,7 +73,7 @@ const form = () => {
                         <BsCheckLg className="me-2" />
                         Salvar
                     </Button>
-                    <Link className="ms-2 btn btn-danger" href="/funcionarios/cardapioca">
+                    <Link className="ms-2 btn btn-danger" href="/funcionarios/cardapioca/cardapioca">
                         <AiOutlineArrowLeft className="me-2" />
                         Voltar
                     </Link>

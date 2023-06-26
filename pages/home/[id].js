@@ -44,7 +44,7 @@ const form = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="avaliacao">
-                  formaluni  <Form.Label>Avaliação: </Form.Label>
+                <Form.Label>Avaliação: </Form.Label>
                     <Form.Control type="text" {...register('avaliacao')} />
                 </Form.Group>
 
