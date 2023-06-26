@@ -33,11 +33,9 @@ const cardapioca = () => {
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Tipo</th>
                     <th>Descrição</th>
                     <th>Calorias</th>
                     <th>Data de Cadastro</th>
-                    <th>Imagem</th>
                 </tr>
             </thead>
             <tbody>
@@ -51,7 +49,6 @@ const cardapioca = () => {
                                 <BsFillTrash3Fill title="Excluir" onClick={() => excluir(item.id)} className='text-danger' />
                             </td>
                             <td>{item.nome}</td>
-                            <td>{item.tipo}</td>
                             <td>{item.descricao}</td>
                             <td>{item.calorias}</td>
                             <td>{item.dtcadastro}</td>

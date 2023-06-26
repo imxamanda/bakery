@@ -1,34 +1,43 @@
 import Navbar from '@/components/Navbar'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Card, Col, Row } from 'react-bootstrap'
 import cardapioca from '../funcionarios/cardapioca/cardapioca'
+import axios from 'axios'
+
+const index = () => {
+  const [cardapioca, setCardapioca] = useState([])
 
 useEffect(() => {
   getAll()
 }, [])
 
 function getAll() {
-  axios.get('/api/funcionários/cardapioca/cardapioca').then(resultado => {
-      setCursos(resultado.data)
+  axios.get('/api/cardapioca').then(resultado => {
+      setCardapioca(resultado.data)
   })
 }
 
-const index = () => {
   return (
     <Navbar titulo='Cardápio'>
-      <Col className="mb-4">
-        <Card
-         nome={item.nome}
-         tipo={item.tipo}
-         descricao={item.descricao}
-         calorias={item.calorias}
-         dtcadastro={item.dtcadastro}
-        />
-      </Col>
-
-        
+       <Row md={4}>
+                {cardapioca.map(item => (
+                    <Col key={item.id}>
+                        <Card className="mb-3">
+                            <Card.Img variant="top"/>
+                            <Card.Body>
+                                <Card.Title>{item.nome}</Card.Title>
+                                <p>Tipo: {item.tipo}</p>
+                                <p>Descrição: {item.descricao}</p>
+                                <p>Calorias: {item.calorias}</p>
+                                <p>Data de Cadastro: {item.dtcadastro}</p>
+                            </Card.Body>
+                        </Card>
+                    </Col>
+                ))}
+            </Row>
     </Navbar>
   )
 }
+
 
 export default index

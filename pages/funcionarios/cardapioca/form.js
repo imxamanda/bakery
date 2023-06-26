@@ -8,6 +8,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import axios from 'axios'
 import { mask } from 'remask'
 import Navbar from '@/components/Navbar'
+import cadastroValidator from '@/validators/cadastroValidator'
 
 
 const form = () => {
@@ -36,31 +37,18 @@ const form = () => {
                     <Form.Control
                         isInvalid={errors.nome}
                         type="text"
-                        {...register('nome')} />
+                        {...register('nome', cadastroValidator.nome)} />
                     {
                         errors.nome &&
                         <p className='text-danger'>{errors.nome.message}</p>
                     }
                 </Form.Group>
-                    <p>Tipo:</p>
-                <Form.Select aria-label="Default select example">
-
-                    <option>Selecione</option>
-                    <option value="bebida">Bebida</option>
-                    <option value="panificacao">Panificação</option>
-                    <option value="frios">Frios</option>
-                    <option value="confeitaria">Confeitaria</option>
-                    <option value="sanduiche">Sanduiche</option>
-                    <option value="salgado">Salgado</option>
-                    <option value="doce">Doce</option>
-
-                </Form.Select>
-                <br />
+                   
 
                 <Form.Group className="mb-3" controlId="descricao">
                     <Form.Label>Descrição: </Form.Label>
                     <Form.Control isInvalid={errors.descricao} type="text"
-                        {...register('descricao')}
+                        {...register('descricao', cadastroValidator.descricao)}
                        />
                     {
                         errors.descricao &&
@@ -71,7 +59,7 @@ const form = () => {
                 <Form.Group className="mb-3" controlId="calorias">
                     <Form.Label>Calorias: </Form.Label>
                     <Form.Control isInvalid={errors.calorias} type="text"
-                       {...register('calorias')} />
+                       {...register('calorias', cadastroValidator.calorias)} />
                     {
                         errors.avaliacao &&
                         <p className='text-danger'>{errors.calorias.message}</p>
@@ -80,7 +68,7 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="dtcadastro">
                     <Form.Label>Data do Cadastro: </Form.Label>
-                    <Form.Control isInvalid={errors.dtcadastro} type="text" {...register('dtcadastro')} />
+                    <Form.Control isInvalid={errors.dtcadastro} type="text" {...register('dtcadastro', cadastroValidator.dtcadastro)} />
                     {
                         errors.dtcadastro &&
                         <p className='text-danger'>{errors.dtcadastro.message}</p>

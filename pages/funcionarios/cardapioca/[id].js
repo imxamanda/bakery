@@ -38,20 +38,6 @@ const form = () => {
                     <Form.Control type="text" {...register('nome')} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="tipo">
-                    <Form.Label>Tipo: </Form.Label>
-                    <Form.Select type="text" {...register('tipo')}>
-                    <option value="bebida">Bebida</option>
-                    <option value="panificacao">Panificação</option>
-                    <option value="frios">Frios</option>
-                    <option value="confeitaria">Confeitaria</option>
-                    <option value="sanduiche">Sanduiche</option>
-                    <option value="salgado">Salgado</option>
-                    <option value="doce">Doce</option>
-                    </Form.Select>
-
-                </Form.Group>
-
                 <Form.Group className="mb-3" controlId="descricao">
                     <Form.Label>Descrição: </Form.Label>
                     <Form.Control type="text" {...register('descricao')} />
