@@ -8,7 +8,8 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import axios from 'axios'
 import { mask } from 'remask'
 import Navbar from '@/components/Navbar'
-import ImageUploader from 'react-image-upload'
+import Upload from '@/components/Upload'
+
 
 const form = () => {
 
@@ -17,7 +18,7 @@ const form = () => {
    
     function salvar(dados) {
         axios.post('/api/cardapioca', dados)
-        push('/funcionarios/cardapioca')
+        push('/funcionarios/cardapioca/cardapioca')
     }
 
 
@@ -86,6 +87,8 @@ const form = () => {
                         <p className='text-danger'>{errors.dtcadastro.message}</p>
                     }
                 </Form.Group>
+                
+                <Upload controlId="file"></Upload>
             
                 <div className='text-center'>
                     <Button variant="success" onClick={handleSubmit(salvar)}>

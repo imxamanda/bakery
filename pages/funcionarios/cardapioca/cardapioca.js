@@ -5,6 +5,7 @@ import React, { useEffect, useState } from 'react'
 import { Table } from 'react-bootstrap'
 import { BsFillTrash3Fill, BsPencilFill } from 'react-icons/bs'
 
+
 const cardapioca = () => {
   const [cardapioca, setCardapioca] = useState([])
 
@@ -54,7 +55,7 @@ const cardapioca = () => {
                             <td>{item.descricao}</td>
                             <td>{item.calorias}</td>
                             <td>{item.dtcadastro}</td>
-                            <td>{item.formFile}</td>
+                            <td>{item.file}</td>
                         </tr>
                     ))}
                 </tbody>
