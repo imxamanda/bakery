@@ -87,9 +87,7 @@ const form = () => {
                         <p className='text-danger'>{errors.dtcadastro.message}</p>
                     }
                 </Form.Group>
-                
-                <Upload controlId="file"></Upload>
-            
+
                 <div className='text-center'>
                     <Button variant="success" onClick={handleSubmit(salvar)}>
                         <BsCheckLg className="me-2" />

@@ -8,6 +8,7 @@ import { AiOutlineArrowLeft } from 'react-icons/ai'
 import axios from 'axios'
 import { mask } from 'remask'
 import Navbar from '@/components/Navbar'
+import homeValidator from '@/validators/homeValidator'
 
 const form = () => {
 
@@ -18,7 +19,6 @@ const form = () => {
         axios.post('/api/home', dados)
         push('/home')
     }
-
 
     function handleChange(event){
         const name = event.target.name
@@ -35,7 +35,7 @@ const form = () => {
                     <Form.Control 
                     isInvalid={errors.nome} 
                     type="text" 
-                    {...register('nome')} />
+                    {...register('nome', homeValidator.nome)} />
                     {
                         errors.nome &&
                         <p className='text-danger'>{errors.nome.message}</p>
@@ -45,10 +45,10 @@ const form = () => {
                 <Form.Group className="mb-3" controlId="nota">
                     <Form.Label>Nota: </Form.Label>
                     <Form.Control 
-                    mask='9'
-                    isInvalid={errors.nota} type="text"
-                     {...register('nota')}
-                     onChange={handleChange} />
+                    isInvalid={errors.nota} 
+                    type="text"
+                     {...register('nota', homeValidator.nota)}
+                      />
                     {
                         errors.nota &&
                         <p className='text-danger'>{errors.nota.message}</p>
@@ -57,8 +57,10 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="avaliacao">
                     <Form.Label>Avaliação: </Form.Label>
-                    <Form.Control isInvalid={errors.avaliacao} type="text"
-                     {...register('avaliacao')} />
+                    <Form.Control 
+                    isInvalid={errors.avaliacao}
+                    type="text"
+                     {...register('avaliacao', homeValidator.avaliacao)} />
                     {
                         errors.avaliacao &&
                         <p className='text-danger'>{errors.avaliacao.message}</p>
@@ -67,7 +69,10 @@ const form = () => {
 
                 <Form.Group className="mb-3" controlId="email">
                     <Form.Label>Email: </Form.Label>
-                    <Form.Control isInvalid={errors.email} type="text" {...register('email')} />
+                    <Form.Control 
+                    isInvalid={errors.email} 
+                    type="text"
+                     {...register('email', homeValidator.email)} />
                     {
                         errors.email &&
                         <p className='text-danger'>{errors.email.message}</p>
@@ -79,7 +84,7 @@ const form = () => {
                     <Form.Control 
                     mask='(99) 99999-9999'
                     isInvalid={errors.telefone} type="text" 
-                    {...register('telefone')}
+                    {...register('telefone', homeValidator.telefone)}
                     onChange={handleChange} />
                     {
                         errors.telefone &&

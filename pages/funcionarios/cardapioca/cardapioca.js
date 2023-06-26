@@ -55,7 +55,7 @@ const cardapioca = () => {
                             <td>{item.descricao}</td>
                             <td>{item.calorias}</td>
                             <td>{item.dtcadastro}</td>
-                            <td>{item.file}</td>
+                        
                         </tr>
                     ))}
                 </tbody>
