@@ -42,7 +42,7 @@ const cardapioca = () => {
                     {cardapioca.map(item => (
                         <tr key={item.id}>
                             <td>
-                                <Link href={'/funcionarios/cardapioca/cardapioca' + item.id}>
+                                <Link href={'/funcionarios/cardapioca/cardapioca/' + item.id}>
                                     <BsPencilFill title="Alterar" className='text-primary' />
                                 </Link>
                                 {' '}

@@ -15,19 +15,19 @@ const form = () => {
 
     useEffect(() => {
         if (query.id) {
-            axios.get('/api/cardapioca/' + query.id).then(resultado => {
-                const home = resultado.data
+            axios.get('/api/lojas/' + query.id).then(resultado => {
+                const lojas = resultado.data
 
-                for (let atributo in home) {
-                    setValue(atributo, home[atributo])
+                for (let atributo in lojas) {
+                    setValue(atributo, lojas[atributo])
                 }
             })
         }
     }, [query.id])
 
     function salvar(dados) {
-        axios.put('/api/cardapioca/' + query.id, dados)
-        push('/funcionarios/cardapioca')
+        axios.put('/api/lojas/' + query.id, dados)
+        push('/funcionarios/loja/novaloja')
     }
 
     return (
