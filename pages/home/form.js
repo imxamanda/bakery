@@ -15,11 +15,10 @@ const form = () => {
     const { register, handleSubmit, formState: {errors}, setValue } = useForm()
 
     function salvar(dados) {
-        const homes = JSON.parse(window.localStorage.getItem('home')) || []
-        homes.push(dados)
-        window.localStorage.setItem('home', JSON.stringify(homes))
+        axios.post('/api/home', dados)
         push('/home')
     }
+
 
     function handleChange(event){
         const name = event.target.name
@@ -43,26 +42,26 @@ const form = () => {
                     }
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="cpf">
+                <Form.Group className="mb-3" controlId="nota">
                     <Form.Label>Nota: </Form.Label>
                     <Form.Control 
-                    mask='999.999.999-99'
-                    isInvalid={errors.cpf} type="text"
-                     {...register('cpf')}
+                    mask='9'
+                    isInvalid={errors.nota} type="text"
+                     {...register('nota')}
                      onChange={handleChange} />
                     {
-                        errors.cpf &&
-                        <p className='text-danger'>{errors.cpf.message}</p>
+                        errors.nota &&
+                        <p className='text-danger'>{errors.nota.message}</p>
                     }
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="matricula">
+                <Form.Group className="mb-3" controlId="avaliacao">
                     <Form.Label>Avaliação: </Form.Label>
-                    <Form.Control isInvalid={errors.matricula} type="text"
-                     {...register('matricula')} />
+                    <Form.Control isInvalid={errors.avaliacao} type="text"
+                     {...register('avaliacao')} />
                     {
-                        errors.matricula &&
-                        <p className='text-danger'>{errors.matricula.message}</p>
+                        errors.avaliacao &&
+                        <p className='text-danger'>{errors.avaliacao.message}</p>
                     }
                 </Form.Group>
 

@@ -79,7 +79,7 @@ const index = () => {
                 ))}
             </tbody>
         </Table>
-        <Link href="/home/form" className='mb-2 btn btn-dark'>
+        <Link href="/home/form" className='mb-2 btn btn-danger'>
         Deixe seu feedback!
         </Link>
     </Navbar>

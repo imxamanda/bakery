@@ -14,8 +14,8 @@ const Cabecalho = () => {
            
 
             <NavDropdown title="Funcionários" id="basic-nav-dropdown">
-              <NavDropdown.Item href="/funcionarios/cardapioca">Cadastrar no Cardápio</NavDropdown.Item>
-              <NavDropdown.Item href="/funcionarios/novaloja">Cadastrar Nova Loja</NavDropdown.Item>
+              <NavDropdown.Item href="/funcionarios/cardapioca/cardapioca">Cadastrar no Cardápio</NavDropdown.Item>
+              <NavDropdown.Item href="/funcionarios/loja/novaloja">Cadastrar Nova Loja</NavDropdown.Item>
              
             </NavDropdown>
 

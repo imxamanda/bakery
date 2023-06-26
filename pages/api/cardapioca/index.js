@@ -6,7 +6,7 @@ export default function handler(req, res) {
 
   if (req.method == 'GET') {
 
-    get(child(ref(db),'funcionarios')).then(snapshot=>{
+    get(child(ref(db),'cardapioca')).then(snapshot=>{
 
       const retorno = []
 
@@ -25,6 +25,6 @@ export default function handler(req, res) {
 
 
 
-  set(ref(db, 'funcionarios/' + uuid), dados)
+  set(ref(db, 'cardapioca/' + uuid), dados)
    } 
 }

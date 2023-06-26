@@ -8,19 +8,19 @@ export default function handler(req, res) {
   
   if (req.method == 'GET') {
 
-    get(child(ref(db),'funcionarios/' + id )).then(snapshot=>{
+    get(child(ref(db),'cardapioca/' + id )).then(snapshot=>{
       res.status(200).json(snapshot.val())
       })
       
   } else if (req.method == 'PUT') {
     
     const dados = req.body
-    update(ref(db, 'funcionarios/' + id), dados)
+    update(ref(db, 'cardapioca/' + id), dados)
     res.status(200).json(dados)
 
   } else if (req.method == 'DELETE') {
 
-    remove(ref(db, 'funcionarios/' + id))
+    remove(ref(db, 'cardapioca/' + id))
 
     res.status(200).json(id)
   } 

@@ -12,13 +12,13 @@ const form = () => {
 
     const { push, query } = useRouter()
     const { register, handleSubmit, setValue } = useForm()
-    
+
     useEffect(() => {
-        if(query.id){
-            axios.get('/api/home/' + query.id).then(resultado => {
+        if (query.id) {
+            axios.get('/api/cardapioca/' + query.id).then(resultado => {
                 const home = resultado.data
 
-                for(let atributo in home){
+                for (let atributo in home) {
                     setValue(atributo, home[atributo])
                 }
             })
@@ -26,50 +26,49 @@ const form = () => {
     }, [query.id])
 
     function salvar(dados) {
-        axios.put('/api/home/' + query.id, dados)
-        push('/home')
+        axios.put('/api/cardapioca/' + query.id, dados)
+        push('/funcionarios/cardapioca')
     }
 
     return (
-        <Navbar titulo="home">
+        <Navbar titulo="Cadastre um Novo Item">
             <Form>
                 <Form.Group className="mb-3" controlId="nome">
                     <Form.Label>Nome: </Form.Label>
                     <Form.Control type="text" {...register('nome')} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="nota">
-                    <Form.Label>Nota: </Form.Label>
-                    <Form.Control type="text" {...register('nota')} />
+                <Form.Group className="mb-3" controlId="tipo">
+                    <Form.Label>Tipo: </Form.Label>
+                    <Form.Control type="text" {...register('tipo')} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="avaliacao">
-                  formaluni  <Form.Label>Avaliação: </Form.Label>
-                    <Form.Control type="text" {...register('avaliacao')} />
+                <Form.Group className="mb-3" controlId="descricao">
+                    formaluni  <Form.Label>Descrição: </Form.Label>
+                    <Form.Control type="text" {...register('descricao')} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="email">
-                    <Form.Label>email: </Form.Label>
-                    <Form.Control type="text" {...register('email')} />
+                <Form.Group className="mb-3" controlId="calorias">
+                    <Form.Label>Calorias: </Form.Label>
+                    <Form.Control type="text" {...register('calorias')} />
                 </Form.Group>
 
-                <Form.Group className="mb-3" controlId="telefone">
-                    <Form.Label>Telefone: </Form.Label>
-                    <Form.Control type="text" {...register('telefone')} />
+                <Form.Group className="mb-3" controlId="dtcadastro">
+                    <Form.Label>Data de cadastro: </Form.Label>
+                    <Form.Control type="text" {...register('dtcadastro')} />
                 </Form.Group>
 
-              
-
+            
                 <div className='text-center'>
                     <Button variant="success" onClick={handleSubmit(salvar)}>
                         <BsCheckLg className="me-2" />
                         Salvar
                     </Button>
-                    <Link className="ms-2 btn btn-danger" href="/home">
+                    <Link className="ms-2 btn btn-danger" href="/funcionarios/cardapioca">
                         <AiOutlineArrowLeft className="me-2" />
                         Voltar
                     </Link>
-                </div> 
+                </div>
             </Form>
         </Navbar>
     )
