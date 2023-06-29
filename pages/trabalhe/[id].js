@@ -15,11 +15,11 @@ const form = () => {
     
     useEffect(() => {
         if(query.id){
-            axios.get('/api/home/' + query.id).then(resultado => {
-                const home = resultado.data
+            axios.get('/api/trabalhe/' + query.id).then(resultado => {
+                const trabalhe = resultado.data
 
-                for(let atributo in home){
-                    setValue(atributo, home[atributo])
+                for(let atributo in trabalhe){
+                    setValue(atributo, trabalhe[atributo])
                 }
             })
         }
@@ -31,27 +31,12 @@ const form = () => {
     }
 
     return (
-        <Navbar titulo="home">
+        <Navbar titulo="Currículo">
             <Form>
                 <Form.Group className="mb-3" controlId="nome">
                     <Form.Label>Nome: </Form.Label>
                     <Form.Control type="text" {...register('nome')} />
                 </Form.Group>
-
-                <p>Cargo:</p>
-                <Form.Select aria-label="Default select example" controlId="cargo">
-
-                    <option>Selecione</option>
-                    <option value="atendente">Atendente</option>
-                    <option value="cozinha">Cozinheiro/a</option>
-                    <option value="confeitaria">Confeiteiro/a</option>
-                    <option value="caixa">Caixa</option>
-                    <option value="limpeza">Limpeza</option>
-                    <option value="financeiro">Padeiro/a</option>
-                    <option value="financeiro">Financeiro</option>
-
-                </Form.Select>
-                <br />
 
                 <Form.Group className="mb-3" controlId="escolaridade">
                   <Form.Label>Escolaridade: </Form.Label>

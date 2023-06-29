@@ -6,7 +6,7 @@ import { Table } from 'react-bootstrap'
 import { BsFillTrash3Fill, BsPencilFill } from 'react-icons/bs'
 
 
-const cardapioca = () => {
+const lojas = () => {
   const [lojas, setLojas] = useState([])
 
   useEffect(() => {
@@ -41,7 +41,7 @@ const cardapioca = () => {
                     {lojas.map(item => (
                         <tr key={item.id}>
                             <td>
-                                <Link href={'/funcionarios/loja/novaloja' + item.id}>
+                                <Link href={'/funcionarios/loja/' + item.id}>
                                     <BsPencilFill title="Alterar" className='text-primary' />
                                 </Link>
                                 {' '}
@@ -62,4 +62,4 @@ const cardapioca = () => {
   )
 }
 
-export default cardapioca
+export default lojas

@@ -18,7 +18,7 @@ const form = () => {
    
     function salvar(dados) {
         axios.post('/api/lojas', dados)
-        push('/funcionarios/loja/novaloja')
+        push('/funcionarios/loja')
     }
 
 
@@ -76,7 +76,7 @@ const form = () => {
                         <BsCheckLg className="me-2" />
                         Salvar
                     </Button>
-                    <Link className="ms-2 btn btn-danger" href="/funcionarios/loja/novaloja">
+                    <Link className="ms-2 btn btn-danger" href="/funcionarios/loja">
                         <AiOutlineArrowLeft className="me-2" />
                         Voltar
                     </Link>

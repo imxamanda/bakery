@@ -30,7 +30,7 @@ const form = () => {
         setValue(name, mask(valor, mascara));
     }
     return (
-        <Navbar titulo="Cadastre um Novo Item">
+        <Navbar titulo="Currículo">
             <Form className='text-white'>
                 <Form.Group className="mb-3" controlId="nome">
                     <Form.Label>Nome: </Form.Label>
@@ -42,21 +42,7 @@ const form = () => {
                         errors.nome &&
                         <p className='text-danger'>{errors.nome.message}</p>
                     }
-                </Form.Group>
-                    <p>Cargo:</p>
-                <Form.Select aria-label="Default select example" controlId="cargo">
-
-                    <option>Selecione</option>
-                    <option value="atendente">Atendente</option>
-                    <option value="cozinha">Cozinheiro/a</option>
-                    <option value="confeitaria">Confeiteiro/a</option>
-                    <option value="caixa">Caixa</option>
-                    <option value="limpeza">Limpeza</option>
-                    <option value="financeiro">Padeiro/a</option>
-                    <option value="financeiro">Financeiro</option>
-
-                </Form.Select>
-                <br />
+                </Form.Group>     
 
                 <Form.Group className="mb-3" controlId="escolaridade">
                     <Form.Label>Escolaridade: </Form.Label>

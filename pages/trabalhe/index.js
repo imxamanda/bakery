@@ -51,7 +51,7 @@ function generatePDF(trabalhe) {
               item.email,
               item.telefone,
               item.dt_nascimento,
-              item.loja
+  
             ])
           ]
         }
@@ -79,7 +79,6 @@ function generatePDF(trabalhe) {
                 <tr>
                     <th>#</th>
                     <th>Nome</th>
-                    <th>Cargo</th>
                     <th>Escolaridade</th>
                     <th>E-mail</th>
                     <th>Telefone</th>
@@ -98,7 +97,6 @@ function generatePDF(trabalhe) {
                                 <BsFillTrash3Fill title="Excluir" onClick={() => excluir(item.id)} className='text-danger' />
                             </td>
                             <td>{item.nome}</td>
-                            <td>{item.cargo}</td>
                             <td>{item.escolaridade}</td>
                             <td>{item.email}</td>
                             <td>{item.telefone}</td>
