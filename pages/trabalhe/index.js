@@ -42,15 +42,15 @@ function generatePDF(trabalhe) {
         table: {
           headerRows: 1,
           body: [
-            ["#", "Nome", "Cargo", "Escolaridade", "E-mail", "Telefone", "Data de Nascimento", "Loja"],
+            ["#", "Nome", "Escolaridade", "E-mail", "Telefone", "Data de Nascimento", "Loja"],
             ...trabalhe.map((item) => [
               item.id,
               item.nome,
-              item.nota,
-              item.avaliacao,
+              item.escolaridade,
               item.email,
               item.telefone,
               item.dt_nascimento,
+              item.loja
   
             ])
           ]
